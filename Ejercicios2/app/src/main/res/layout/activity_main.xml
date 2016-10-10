@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mati.ejercicios2.MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vamos a cambiar los colores del TextView"/>
+    <TableRow android:layout_width="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color1"
+            android:textColor="@color/Rojo"
+            android:id="@+id/boton1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color2"
+            android:textColor="@color/Amarillo"
+            android:id="@+id/boton2"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="Color3"
+            android:textColor="@color/Azul"
+            android:id="@+id/boton3" />
+    </TableRow>
+    <TableRow
+        android:layout_height="500dp"
+        android:id="@+id/fondo">
+
+        <TextView
+            android:layout_height="100dp"
+            android:layout_width="fill_parent"
+            />
+    </TableRow>
+    <TableRow
+        android:gravity="right">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear"
+            android:id="@+id/boton4"/>
+    </TableRow>
+</TableLayout>
