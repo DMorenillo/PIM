@@ -31,16 +31,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/Edad"/>
     </TableRow>
-    <TableRow>
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Imagen" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Imagen"/>
-    </TableRow>
 
     <TableRow
         android:gravity="right">

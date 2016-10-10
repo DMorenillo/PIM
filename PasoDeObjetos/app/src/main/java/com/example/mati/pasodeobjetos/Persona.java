@@ -1,17 +1,21 @@
 package com.example.mati.pasodeobjetos;
 
 
-public class Persona {
+import java.io.Serializable;
+
+public class Persona implements Serializable{
     private String nombre;
     private int edad;
-    private  int imagen;
+    private  int Imagen;
 
-    public Persona() {
+
+    public Persona()  {
     }
 
-    public Persona (String str, int age){
+    public Persona (String str, int age, int Imagen){
         this.nombre = str;
         this.edad = age;
+        this.Imagen = Imagen;
     }
 
     public String getNombre() {
@@ -31,18 +35,18 @@ public class Persona {
     }
 
     public int getImagen() {
-        return imagen;
+        return Imagen;
     }
 
     public void setImagen(int imagen) {
-        this.imagen = imagen;
+        this.Imagen = imagen;
     }
 
     @Override
     public String toString() {
         return "Persona{" +
                 "edad=" + edad +
-                ", imagen=" + imagen +
+                ", imagen=" + Imagen +
                 '}';
     }
 }
