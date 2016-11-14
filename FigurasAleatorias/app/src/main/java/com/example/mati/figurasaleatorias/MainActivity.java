@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void launchDrawShapes1(View clickedButton){
-        Intent activityIntent = new Intent(this,DrawShape1.class);
+        Intent activityIntent = new Intent(this, DrawShape1.class);
         startActivity(activityIntent);
     }
     public void launchDrawShapes2(View clickedButton){
-        Intent activityIntent = new Intent(this,DrawShape2.class);
+        Intent activityIntent = new Intent(this, DrawShape2.class);
         startActivity(activityIntent);
     }
 }

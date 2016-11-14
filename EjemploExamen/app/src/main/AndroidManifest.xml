@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mati.figurasaleatorias">
+    package="com.example.mati.ejemploexamen">
 
     <application
         android:allowBackup="true"
@@ -15,8 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrawShape1"/>
-        <activity android:name=".DrawShape2"/>
     </application>
 
 </manifest>
