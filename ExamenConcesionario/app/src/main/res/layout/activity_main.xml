@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mati.examenconcesionario.MainActivity">
+
+    <TableRow android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/row1">
+        <LinearLayout
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ALQUILER DE COCHES"
+                android:textSize="5pt"/>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner">
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo"
+                android:layout_marginLeft="20pt" />
+        </LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/row2"
+        android:gravity="right">
+        <RadioGroup
+            android:id="@+id/rg">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiobutton1"
+                android:text="SIN SEGURO"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiobutton2"
+                android:text="SEGURO TODO RIESGO"/>
+        </RadioGroup>
+    </TableRow>
+    <TableRow>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/AireAcondicionado"
+                android:text="Aire Acondicionado"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gps"
+                android:text="GPS"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="right">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/RadioDVD"
+                android:text="Radio/DVD"
+                />
+        </LinearLayout>
+    </TableRow>
+    <EditText android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Numero de Horas"
+        android:id="@+id/txt1"
+        android:inputType="numberDecimal"/>
+
+    <TableRow android:orientation="horizontal"
+        android:gravity="right">
+        <Button android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="TOTAL PRECIO"
+            android:id="@+id/Calculos"/>
+    </TableRow>
+    <TableRow
+        android:orientation="horizontal"
+        android:gravity="right">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Precio"
+            android:id="@+id/preciofinal"/>
+    </TableRow>
+</TableLayout>
