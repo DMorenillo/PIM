@@ -13,12 +13,19 @@ public class Coche implements Serializable {
     private String modelo;
     private String marca;
     private double precio;
+    //private int foto;
+
+
 
     public Coche(String modelo, String marca, double precio) {
         this.modelo = modelo;
         this.marca = marca;
         this.precio = precio;
+       // this.foto = foto;
     }
+    //public int getFoto() {return foto;   }
+
+    //public void setFoto(int foto) {this.foto = foto;}
 
     public String getModelo() {return modelo;}
 

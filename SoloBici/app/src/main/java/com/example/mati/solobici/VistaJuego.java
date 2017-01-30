@@ -81,6 +81,9 @@ public class VistaJuego extends View implements SensorEventListener {
         bici = new Grafico(this, graficoBici);
         // CONTROL DEL HILO DEL JUEGO
         corriendo = true;
+
+        hiloJuego = new HiloJuego();
+        hiloJuego.start();
         // REGISTRO DE SENSORES
         SensorManager miSensorManager= (SensorManager)getContext().getSystemService(Context.SENSOR_SERVICE);
         List<Sensor> listaSensores = miSensorManager.getSensorList(Sensor.TYPE_ORIENTATION);
@@ -117,7 +120,6 @@ public class VistaJuego extends View implements SensorEventListener {
         bici.setPosY((h-bici.getAlto())/2);
 
         //HILO QUE CONTROLA EL JUEGO
-
         hiloJuego = new HiloJuego();
         hiloJuego.start();
 
@@ -137,7 +139,7 @@ public class VistaJuego extends View implements SensorEventListener {
         if(ruedaActiva)
             rueda.dibujaGrafico(canvas);
     }
-
+    /*
     private class HiloJuego extends Thread {
         @Override
         public void run() {
@@ -146,7 +148,37 @@ public class VistaJuego extends View implements SensorEventListener {
             }
         }
     }
+    */
+    class HiloJuego extends Thread {
+        private boolean pausa, corriendo;
 
+        @Override
+        public void run() {
+            corriendo=true;
+            while(corriendo) {
+            actualizaMovimiento();
+            synchronized(this){
+                while(pausa) {
+                try {
+                    wait();
+                    } catch (Exception e) {
+                        }
+                    }
+                }
+            } // del while
+        } //del metodo run
+        public synchronized void pausar() {
+            pausa = true;
+        }
+        /*public synchronized void reanudar() {
+            pausa = false;
+            notify();
+        }
+        public void detener() {
+            corriendo = false;
+            if (pausa) reanudar();
+        }*/
+    } // de la clase HiloJuego
 
     protected synchronized void actualizaMovimiento() {
         long ahora = System.currentTimeMillis();
@@ -236,7 +268,7 @@ public class VistaJuego extends View implements SensorEventListener {
                     break;
         }
         return pulsacion;
-    }/*
+    }
     @Override
    public  boolean onTouchEvent (MotionEvent evento){
         super.onTouchEvent(evento);
@@ -275,9 +307,10 @@ public class VistaJuego extends View implements SensorEventListener {
                 }
                 break;
         }
-        mX=x; mY=y;
+        mX=x;
+        mY=y;
         return true;
-    }*/
+    }
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy){
         // TODO Auto-generated methos stub

@@ -2,6 +2,8 @@ package com.example.mati.examenconcesionario;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
             new Coche("Leon", "Seat", 30),
             new Coche("Fiesta", "Ford", 40),
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         //INICIAMOS ELEMENTOS
 
@@ -54,7 +58,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         //SPINNER
+        // Ejemplo de imagenes random
+        /*private Bitmap[] mPics = {
+        makeBitmap(R.drawable.astronauta), makeBitmap(R.drawable.fiesta),
+                makeBitmap(R.drawable.diablo), makeBitmap(R.drawable.mascara), makeBitmap(R.drawable.teemin)};
 
+           private void drawRandomBitmap(Canvas canvas, int viewWidth, int viewHeigth){
+
+                Bitmap pic = RandomUtils.randomElement(mPics);
+                canvas.drawBitmap(pic,null);
+    }
+        */
         AdaptadorDestino adaptador = new AdaptadorDestino(this);
         miSpinner.setAdapter(adaptador);
         miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -70,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+/*
+            private Bitmap[] mFord = {
+                    makeBitmap(R.drawable.fiesta1), makeBitmap(R.drawable.fiesta2),
+                    makeBitmap(R.drawable.fiesta3)
+            };
+            private Bitmap makeBitmap(int bitmapId) {
+                return (BitmapFactory.decodeResource(getResources(), bitmapId));
+            } */
         });
         //TEXTVIEW
         miTexto.setOnClickListener(new View.OnClickListener() {
